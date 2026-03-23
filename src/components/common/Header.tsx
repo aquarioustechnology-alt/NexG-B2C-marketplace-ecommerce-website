@@ -3,13 +3,27 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Search, ShoppingCart, User, Menu, X, Phone, Mail, MapPin, ChevronDown, PackageCheck } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [pincode, setPincode] = useState("");
   const [appliedPincode, setAppliedPincode] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handlePincodeApply = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,16 +43,14 @@ const Header = () => {
     { name: "Industrial Oils", hasDropdown: true },
     { name: "Greases", hasDropdown: true },
     { name: "Automotive", hasDropdown: true },
-    { name: "Marine", hasDropdown: true },
-    { name: "Agriculture", hasDropdown: false },
     { name: "Fuel Additives", hasDropdown: false },
     { name: "Brands", hasDropdown: true }
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] font-sans">
-      {/* 1. Top Strip - Contact Info */}
-      <div className="bg-brand-blue text-white py-2">
+      {/* 1. Top Strip - Contact Info (Hidden on Scroll) */}
+      <div className={`bg-brand-blue text-white overflow-hidden transition-all duration-300 ease-in-out ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[100px] opacity-100 py-2"}`}>
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 tracking-wide">
           <div className="flex items-center text-center sm:text-left">
             <span className="text-[14px] font-semibold">Trusted Marketplace For Engine Oils, Lubricants & Petroleum Products</span>

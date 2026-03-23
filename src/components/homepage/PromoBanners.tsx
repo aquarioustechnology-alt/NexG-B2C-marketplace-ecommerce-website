@@ -37,38 +37,38 @@ const PromoBanners = () => {
           {/* 1st Banner - Pure Visual */}
           <div className="group relative block aspect-[16/10] overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer">
             <img
-              src="/images/Homepage/Promotion new image 1.png?v=3"
+              src="/images/Homepage/Promotion 1.png?v=5"
               alt="Performance Lubricants"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Minimal Overlay for Link visual feedback */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
 
-            <Link href="/shop" className="absolute inset-0 z-10" />
+            {/* <Link href="/shop" className="absolute inset-0 z-10" /> */}
           </div>
 
           {/* 2nd Banner - Pure Visual */}
           <div className="group relative block aspect-[16/10] overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer">
             <img
-              src="/images/Homepage/Promotional 2.png?v=3"
-              alt="Bulk Fuels"
+              src="/images/Homepage/Promotion 2.png?v=5"
+              alt="Professional Oil"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Minimal Overlay for Link visual feedback */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
-            <Link href="/shop" className="absolute inset-0 z-10" />
+            {/* <Link href="/shop" className="absolute inset-0 z-10" /> */}
           </div>
 
           {/* 3rd Banner - Pure Visual */}
           <div className="group relative block aspect-[16/10] overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer">
             <img
-              src="/images/Homepage/Promotional 3.png?v=3"
-              alt="Extreme Load"
+              src="/images/Homepage/Promotion 3.png?v=5"
+              alt="Quality Care"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             {/* Minimal Overlay for Link visual feedback */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
-            <Link href="/shop" className="absolute inset-0 z-10" />
+            {/* <Link href="/shop" className="absolute inset-0 z-10" /> */}
           </div>
         </div>
       </div>
