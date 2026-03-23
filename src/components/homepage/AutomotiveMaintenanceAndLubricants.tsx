@@ -40,7 +40,7 @@ const AutomotiveMaintenanceAndLubricants = () => {
             </p>
             <Link 
               href="/shop" 
-              className="relative px-8 py-3.5 bg-brand-blue rounded-lg text-white font-bold text-[16px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+              className="relative px-8 py-3.5 border border-white bg-transparent rounded-lg text-white font-bold text-[16px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
             >
               {/* Left-to-Right White Sweep Layer */}
               <div className="absolute inset-0 w-0 bg-white group-hover/btn:w-full transition-all duration-500 ease-out" />

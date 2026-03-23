@@ -1,5 +1,6 @@
 import Hero from "@/components/homepage/Hero";
 import TrustBadges from "@/components/homepage/TrustBadges";
+import HotDeals from "@/components/homepage/HotDeals";
 import PromoBanners from "@/components/homepage/PromoBanners";
 import BestSellers from "@/components/homepage/BestSellers";
 import AutomotiveMaintenanceAndLubricants from "@/components/homepage/AutomotiveMaintenanceAndLubricants";
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="flex flex-col font-sans">
       <Hero />
       <TrustBadges />
+      <HotDeals />
       <PromoBanners />
       <BestSellers />
       <AutomotiveMaintenanceAndLubricants />
