@@ -7,6 +7,8 @@ import CarEngineOilsGrid from "@/components/homepage/CarEngineOilsGrid";
 import EngineCareCTA from "@/components/homepage/EngineCareCTA";
 import TopCategories from "@/components/homepage/TopCategories";
 import TrendingProducts from "@/components/homepage/TrendingProducts";
+import TrendingBanners from "@/components/homepage/TrendingBanners";
+import ProductsUnder500 from "@/components/homepage/ProductsUnder500";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <EngineCareCTA />
       <TopCategories />
       <TrendingProducts />
+      <TrendingBanners />
+      <ProductsUnder500 />
     </div>
   );
 }

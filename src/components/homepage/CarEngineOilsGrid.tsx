@@ -132,7 +132,7 @@ const CarEngineOilsGrid = () => {
   };
 
   return (
-    <section className="bg-white py-[60px]">
+    <section className="bg-white pt-[60px] pb-0">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-8 px-1">

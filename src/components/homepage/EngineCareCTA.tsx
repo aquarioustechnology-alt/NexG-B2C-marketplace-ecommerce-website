@@ -6,26 +6,26 @@ import { ArrowRight } from "lucide-react";
 
 const EngineCareCTA = () => {
   return (
-    <section className="bg-white py-[60px]">
+    <section className="bg-white py-[84px]">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-        <div className="relative w-full aspect-[21/9] lg:aspect-[25/8] overflow-hidden rounded-[32px] shadow-2xl">
+        <div className="relative w-full aspect-[21/7] lg:aspect-[25/6] overflow-hidden rounded-[32px] shadow-2xl">
           {/* Background Image */}
           <img
-            src="/images/Homepage/CTA BG first.png"
+            src="/images/Homepage/CTA BG first.png?v=10"
             alt="Engine Care background"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
-          {/* Darker Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
-
           {/* Content */}
           <div className="relative h-full flex flex-col justify-center px-10 lg:px-20 max-w-[800px]">
-            <h2 className="text-white text-[32px] lg:text-[48px] font-black leading-tight tracking-tighter mb-4 capitalize">
+            <h1 
+              className="!text-white text-[26px] lg:text-[38px] font-black leading-tight tracking-tighter mb-2 capitalize drop-shadow-2xl"
+              style={{ color: 'white' }}
+            >
               Engineering Extreme Care <br /> for Every Drive
-            </h2>
+            </h1>
             
-            <p className="text-gray-200 text-[16px] lg:text-[18px] font-medium mb-10 max-w-[600px] leading-relaxed">
+            <p className="text-gray-200 text-[14px] lg:text-[16px] font-medium mb-6 max-w-[600px] leading-relaxed">
               Experience unparalleled engine longevity and smooth performance with 
               our precision-engineered lubricants tailored for modern automotive excellence.
             </p>
