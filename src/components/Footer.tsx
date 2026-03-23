@@ -80,9 +80,13 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your Email..."
+                  suppressHydrationWarning
                   className="flex-grow bg-transparent px-3 py-2 text-xs focus:outline-none focus:ring-0"
                 />
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-colors">
+                <button 
+                  suppressHydrationWarning
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-colors"
+                >
                   Join
                 </button>
               </div>
@@ -92,7 +96,7 @@ const Footer = () => {
 
         {/* Bottom Banner */}
         <div className="flex flex-col md:flex-row items-center justify-between mt-16 pt-8 border-t border-gray-800 text-[10px] text-gray-500 space-y-4 md:space-y-0 uppercase tracking-widest font-medium">
-          <p>© {new Date().getFullYear()} NexG Marketplace. All rights reserved.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} NexG Marketplace. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
