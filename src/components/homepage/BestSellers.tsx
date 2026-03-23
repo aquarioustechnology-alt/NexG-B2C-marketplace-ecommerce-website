@@ -116,11 +116,18 @@ const BestSellers = () => {
   };
 
   const selectSize = (productId: number, size: string) => {
-    setSelectedSizes((prev) => ({ ...prev, [productId]: size }));
+    setSelectedSizes((prev) => {
+      if (prev[productId] === size) {
+        const newState = { ...prev };
+        delete newState[productId];
+        return newState;
+      }
+      return { ...prev, [productId]: size };
+    });
   };
 
   return (
-    <section className="bg-white py-1.5 lg:py-24">
+    <section className="bg-white py-20">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-12 px-1">
@@ -154,13 +161,13 @@ const BestSellers = () => {
           {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
-            className="absolute left-[-25px] top-[100px] z-30 w-11 h-11 bg-white shadow-xl rounded-[8px] flex items-center justify-center text-gray-800 hover:bg-brand-blue hover:text-white transition-all border border-gray-100/60 group"
+            className="absolute left-[-25px] top-[100px] z-30 w-11 h-11 bg-white shadow-xl rounded-[8px] flex items-center justify-center text-gray-800 hover:bg-brand-blue hover:text-white transition-all border border-gray-100/60 group px-0"
           >
             <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-[-25px] top-[100px] z-30 w-11 h-11 bg-white shadow-xl rounded-[8px] flex items-center justify-center text-gray-800 hover:bg-brand-blue hover:text-white transition-all border border-gray-100/60 group"
+            className="absolute right-[-25px] top-[100px] z-30 w-11 h-11 bg-white shadow-xl rounded-[8px] flex items-center justify-center text-gray-800 hover:bg-brand-blue hover:text-white transition-all border border-gray-100/60 group px-0"
           >
              <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </button>
@@ -237,7 +244,7 @@ const BestSellers = () => {
                     </span>
                   </div>
 
-                  {/* Size Choices - Larger and Selectable */}
+                  {/* Size Choices - Larger and Selectable with Deselect */}
                   <div className="flex flex-wrap items-center gap-2">
                     {product.sizes.map((size) => (
                       <button 
@@ -257,13 +264,6 @@ const BestSellers = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Bottom View All Button */}
-        <div className="mt-16 flex justify-center">
-           <button className="px-16 py-4 border-2 border-[#222222] rounded-xl font-black uppercase text-[14px] tracking-widest hover:bg-[#222222] hover:text-white transition-all duration-300">
-             View All Best Sellers
-           </button>
         </div>
       </div>
     </section>
