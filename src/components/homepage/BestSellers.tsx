@@ -221,7 +221,7 @@ const BestSellers = () => {
 
                 {/* Product Details */}
                 <div className="px-1 py-5">
-                  <div className="flex items-center gap-1 mb-2">
+                  <div className="flex items-center gap-1 mb-1">
                     {[...Array(5)].map((_, i) => (
                       <Star 
                         key={i} 
@@ -231,11 +231,11 @@ const BestSellers = () => {
                     <span className="text-[10px] text-gray-500 font-bold ml-1">{product.rating}</span>
                   </div>
 
-                  <h3 className="text-[#222222] font-black leading-snug mb-3 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
+                  <h3 className="text-[#222222] font-black leading-snug mb-1.5 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
                     {product.name}
                   </h3>
 
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3 mb-2.5">
                     <span className="text-[18px] font-black text-brand-blue">
                       ₹{product.price.toLocaleString()}
                     </span>
