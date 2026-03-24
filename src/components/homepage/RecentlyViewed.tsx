@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 const products = [
   {
@@ -88,6 +89,7 @@ const products = [
 ];
 
 const RecentlyViewed = () => {
+  const { addToCart } = useCart();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [wishlisted, setWishlisted] = useState<Record<number, boolean>>({});
   const [selectedSizes, setSelectedSizes] = useState<Record<number, string>>({});
@@ -198,7 +200,10 @@ const RecentlyViewed = () => {
 
                         {/* Add to Cart */}
                         <div className="absolute bottom-[-60px] group-hover:bottom-0 left-0 right-0 z-20 p-2 transition-all duration-500">
-                          <button className="relative w-full bg-brand-blue text-white py-2.5 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
+                          <button 
+                            onClick={(e) => { e.preventDefault(); addToCart(); }}
+                            className="relative w-full bg-brand-blue text-white py-2.5 rounded-lg font-semibold text-[12px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans"
+                          >
                             <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
                             <ShoppingCart className="relative z-10 w-4 h-4" />
                             <span className="relative z-10">Add to Cart</span>

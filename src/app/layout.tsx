@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import ChatBot from "@/components/common/ChatBot";
+import { CartProvider } from "@/context/CartContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,12 +29,14 @@ export default function RootLayout({
       className={`${montserrat.variable} h-full antialiased font-sans`}
     >
       <body className="min-h-full flex flex-col bg-white text-[#222222]">
-        <Header />
-        <main className="flex-grow w-full max-w-[1600px] mx-auto overflow-hidden">
-          {children}
-        </main>
-        <Footer />
-        <ChatBot />
+        <CartProvider>
+          <Header />
+          <main className="flex-grow w-full max-w-[1600px] mx-auto overflow-hidden">
+            {children}
+          </main>
+          <Footer />
+          <ChatBot />
+        </CartProvider>
       </body>
     </html>
   );

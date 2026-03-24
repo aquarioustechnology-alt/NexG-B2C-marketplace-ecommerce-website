@@ -4,8 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search, ShoppingCart, User, Menu, X, Phone, Mail, MapPin, ChevronDown, PackageCheck } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useCart } from "@/context/CartContext";
 
 const Header = () => {
+  const { cartCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLocationOpen, setIsLocationOpen] = useState(false);
   const [pincode, setPincode] = useState("");
@@ -245,7 +247,7 @@ const Header = () => {
               <Link href="/cart" className="flex items-center gap-1.5 group text-gray-700 hover:text-brand-blue transition-colors relative border-l pl-3 border-gray-200">
                 <div className="relative">
                   <ShoppingCart className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
-                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[9px] font-semibold w-3.5 h-3.5 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
+                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[9px] font-semibold w-3.5 h-3.5 flex items-center justify-center rounded-full ring-2 ring-white transition-all scale-110">{cartCount}</span>
                 </div>
                 <span className="text-[11px] font-semibold uppercase whitespace-nowrap">Cart</span>
               </Link>
@@ -265,17 +267,17 @@ const Header = () => {
 
       {/* 3. Bottom Row - Categories Navigation (with MEGA MENU) */}
       <div className="bg-white hidden lg:block border-y border-gray-100">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-          <nav className="flex items-center space-x-10 py-3">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative">
+          <nav className="flex items-center space-x-10">
             {categories.map((item) => (
-              <div key={item.name} className="relative group/nav">
-                <button className="flex items-center gap-2 text-[11.5px] font-semibold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors cursor-pointer py-1">
+              <div key={item.name} className="group/nav">
+                <button className="flex items-center gap-2 text-[11.5px] font-semibold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors cursor-pointer py-4">
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="w-3 h-3 text-gray-400 group-hover/nav:text-brand-blue transition-colors" />}
                 </button>
                 
                 {item.hasDropdown && (
-                  <div className="fixed top-[146px] left-0 right-0 bg-white shadow-[0_15px_30px_-5px_rgba(0,0,0,0.1)] hidden group-hover/nav:block z-[9999] animate-in fade-in slide-in-from-top-2 duration-300">
+                  <div className="absolute top-full left-0 right-0 bg-white shadow-[0_15px_30px_-5px_rgba(0,0,0,0.1)] hidden group-hover/nav:block z-[9999] animate-in fade-in slide-in-from-top-1 duration-300">
                     <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-3.5 pb-10">
                       <div className="grid grid-cols-4 gap-12">
                         {item.subColumns && item.subColumns.map((col, idx) => (

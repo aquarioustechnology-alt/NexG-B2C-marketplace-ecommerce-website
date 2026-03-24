@@ -12,6 +12,7 @@ import IndustrialPerformanceSolutions from "@/components/homepage/IndustrialPerf
 import RecentlyViewed from "@/components/homepage/RecentlyViewed";
 import TrendingBanners from "@/components/homepage/TrendingBanners";
 import ProductsUnder500 from "@/components/homepage/ProductsUnder500";
+import FeaturedProducts from "@/components/homepage/FeaturedProducts";
 import AboutUs from "@/components/homepage/AboutUs";
 import FAQ from "@/components/homepage/FAQ";
 
@@ -32,6 +33,7 @@ export default function Home() {
       <RecentlyViewed />
       <TrendingBanners />
       <ProductsUnder500 />
+      <FeaturedProducts />
       <AboutUs />
       <FAQ />
     </div>

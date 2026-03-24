@@ -2,102 +2,105 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 const products = [
   {
-    id: 1,
-    name: "NexG Ultra Guard 10W-40 Premium Synthetic Engine Oil",
-    category: "Car Oils",
-    price: 899,
-    originalPrice: 1249,
-    discount: "28% OFF",
+    id: 101,
+    name: "NexG Elite 5W-30 Full Synthetic Car Engine Oil",
+    category: "Synthetic",
+    price: 1250,
+    originalPrice: 1599,
+    discount: "22% OFF",
     rating: 4.8,
     image: "/images/Products/product image 1.jpg",
-    sizes: ["1L", "5L", "26L"],
+    sizes: ["1L", "5L"],
   },
   {
-    id: 2,
-    name: "NexG Turbo Power 15W-40 Heavy Duty Diesel Engine Oil",
-    category: "Car Oils",
-    price: 1450,
-    originalPrice: 1899,
-    discount: "24% OFF",
-    rating: 4.7,
-    image: "/images/Products/product image 2.jpg",
-    sizes: ["5L", "10L", "210L"],
-  },
-  {
-    id: 3,
-    name: "NexG Moto X 4T 20W-40 High Performance Bike Oil",
-    category: "Bike Oils",
-    price: 349,
-    originalPrice: 499,
-    discount: "30% OFF",
+    id: 102,
+    name: "NexG Power Smooth 5W-40 Advanced Performance Oil",
+    category: "Synthetic",
+    price: 1350,
+    originalPrice: 1750,
+    discount: "23% OFF",
     rating: 4.9,
-    image: "/images/Products/product image 3.jpg",
-    sizes: ["1L", "2.5L"],
+    image: "/images/Products/product image 2.jpg",
+    sizes: ["1L", "5L", "10L"],
   },
   {
-    id: 4,
-    name: "NexG Hydra Flow ISO 68 Industrial Hydraulic Oil",
-    category: "Hydraulic",
-    price: 5600,
-    originalPrice: 7200,
-    discount: "22% OFF",
+    id: 103,
+    name: "NexG Standard Guard 10W-30 Semi-Synthetic Oil",
+    category: "Semi-Synthetic",
+    price: 850,
+    originalPrice: 1100,
+    discount: "23% OFF",
+    rating: 4.7,
+    image: "/images/Products/product image 3.jpg",
+    sizes: ["1L", "5L"],
+  },
+  {
+    id: 104,
+    name: "NexG Classic 20W-50 High Mileage Engine Oil",
+    category: "Mineral",
+    price: 650,
+    originalPrice: 850,
+    discount: "24% OFF",
     rating: 4.6,
     image: "/images/Products/product image 4.jpg",
-    sizes: ["26L", "210L"],
-  },
-  {
-    id: 5,
-    name: "NexG Gear Max EP-90 Heavy Duty Gear Lubricant",
-    category: "Industrial",
-    price: 1250,
-    originalPrice: 1650,
-    discount: "24% OFF",
-    rating: 4.5,
-    image: "/images/Products/product image 5.jpg",
-    sizes: ["1L", "5L", "20L"],
-  },
-  {
-    id: 6,
-    name: "NexG Cool Guard Long Life Radiator Coolant (Ready to Use)",
-    category: "Coolants",
-    price: 249,
-    originalPrice: 350,
-    discount: "29% OFF",
-    rating: 4.8,
-    image: "/images/Products/product image 6.jpg",
     sizes: ["1L", "5L"],
   },
   {
-    id: 7,
-    name: "NexG Multi-Purpose Lithium Grease (MP-3)",
-    category: "Greases",
-    price: 450,
-    originalPrice: 599,
-    discount: "25% OFF",
-    rating: 4.7,
-    image: "/images/Products/Product image 7.jpg",
-    sizes: ["500g", "1kg", "18kg"],
-  },
-  {
-    id: 8,
-    name: "NexG Marine Guard Outboard 2T Oil Special Edition",
-    category: "Industrial",
-    price: 950,
-    originalPrice: 1299,
+    id: 105,
+    name: "NexG Ultra Synthetic 0W-20 Fuel Economy Oil",
+    category: "Synthetic",
+    price: 1450,
+    originalPrice: 1999,
     discount: "27% OFF",
     rating: 4.9,
-    image: "/images/Products/Product image 8.jpg",
+    image: "/images/Products/product image 5.jpg",
     sizes: ["1L", "5L"],
+  },
+  {
+    id: 106,
+    name: "NexG Diesel Max 15W-40 Advanced Diesel Engine Oil",
+    category: "Diesel",
+    price: 1550,
+    originalPrice: 2100,
+    discount: "26% OFF",
+    rating: 4.8,
+    image: "/images/Products/product image 6.jpg",
+    sizes: ["5L", "10L"],
+  },
+  {
+    id: 107,
+    name: "NexG Performance Plus 10W-40 Car Oil",
+    category: "Synthetic",
+    price: 1150,
+    originalPrice: 1450,
+    discount: "20% OFF",
+    rating: 4.7,
+    image: "/images/Products/Product image 7.jpg",
+    sizes: ["1L", "5L"],
+  },
+  {
+    id: 108,
+    name: "NexG Racing Edition 10W-60 Synthetic Oil",
+    category: "Racing",
+    price: 2200,
+    originalPrice: 2800,
+    discount: "21% OFF",
+    rating: 5.0,
+    image: "/images/Products/Product image 8.jpg",
+    sizes: ["1L", "4L"],
   }
 ];
 
-const tabs = ["Car Oils", "Bike Oils", "Industrial", "Hydraulic", "Greases", "Coolants"];
+const tabs = ["Car Oils", "Diesel Oils", "Industrial Fluids", "Motorcycle Care", "Greases"];
 
 const BestSellers = () => {
+  const { addToCart } = useCart();
   const [activeTab, setActiveTab] = useState("Car Oils");
   const [selectedSizes, setSelectedSizes] = useState<Record<number, string>>({});
   const [wishlisted, setWishlisted] = useState<Record<number, boolean>>({});
@@ -130,6 +133,11 @@ const BestSellers = () => {
     });
   };
 
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCart();
+  };
+
   return (
     <section className="bg-white py-[60px]">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
@@ -148,10 +156,10 @@ const BestSellers = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-1.5 rounded-md text-[11px] font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                className={`px-5 py-2.5 rounded-md text-[13px] font-semibold uppercase tracking-tight transition-all cursor-pointer ${
                   activeTab === tab
-                    ? "bg-brand-blue text-white shadow-sm"
-                    : "text-gray-500 hover:text-brand-blue hover:bg-white"
+                    ? "bg-brand-blue text-white shadow-md active:scale-95"
+                    : "text-[#555555] hover:text-[#222222] hover:bg-gray-100/80"
                 }`}
               >
                 {tab}
@@ -224,7 +232,10 @@ const BestSellers = () => {
 
                       {/* Add to Cart */}
                       <div className="absolute bottom-[-60px] group-hover:bottom-0 left-0 right-0 z-20 p-3 transition-all duration-500">
-                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
+                        <button 
+                          onClick={handleAddToCart}
+                          className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans"
+                        >
                           <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
                           <ShoppingCart className="relative z-10 w-4.5 h-4.5" />
                           <span className="relative z-10">Add to Cart</span>

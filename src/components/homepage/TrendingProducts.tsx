@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 const products = [
   {
@@ -97,6 +98,7 @@ const products = [
 ];
 
 const TrendingProducts = () => {
+  const { addToCart } = useCart();
   const [selectedSizes, setSelectedSizes] = useState<Record<number, string>>({});
   const [wishlisted, setWishlisted] = useState<Record<number, boolean>>({});
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -126,6 +128,11 @@ const TrendingProducts = () => {
       }
       return { ...prev, [productId]: size };
     });
+  };
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToCart();
   };
 
   return (
@@ -219,7 +226,10 @@ const TrendingProducts = () => {
 
                       {/* Add to Cart */}
                       <div className="absolute bottom-[-60px] group-hover:bottom-0 left-0 right-0 z-20 p-3 transition-all duration-500">
-                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
+                        <button 
+                          onClick={handleAddToCart}
+                          className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans"
+                        >
                           <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
                           <ShoppingCart className="relative z-10 w-4.5 h-4.5" />
                           <span className="relative z-10">Add to Cart</span>
