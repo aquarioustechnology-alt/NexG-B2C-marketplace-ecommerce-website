@@ -123,25 +123,25 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] font-sans">
       {/* 1. Top Strip - Contact Info (Hidden on Scroll) */}
-      <div className="bg-brand-blue text-white overflow-hidden transition-all duration-300 ease-in-out py-2">
+      <div className="bg-brand-blue text-white overflow-hidden transition-all duration-300 ease-in-out py-1.5">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 tracking-wide">
           <div className="flex items-center text-center sm:text-left">
-            <span className="text-[14px] font-semibold">Trusted Marketplace For Engine Oils, Lubricants & Petroleum Products</span>
+            <span className="text-[12.5px] font-semibold">Trusted Marketplace For Engine Oils, Lubricants & Petroleum Products</span>
           </div>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-5">
-            <div className="flex items-center gap-2.5 pr-5 border-r border-white/40">
-              <div className="w-7 h-7 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
-                <Phone className="w-3.5 h-3.5 text-white" />
+            <div className="flex items-center gap-2 pr-5 border-r border-white/40">
+              <div className="w-6 h-6 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
+                <Phone className="w-3 h-3 text-white" />
               </div>
-              <span className="text-[13px] font-semibold">+91 1800 123 4567</span>
+              <span className="text-[12px] font-semibold">+91 1800 123 4567</span>
             </div>
-            <div className="flex items-center gap-2.5 pr-5 border-r border-white/40 whitespace-nowrap">
-              <div className="w-7 h-7 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
-                <Mail className="w-3.5 h-3.5 text-white" />
+            <div className="flex items-center gap-2 pr-5 border-r border-white/40 whitespace-nowrap">
+              <div className="w-6 h-6 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
+                <Mail className="w-3 h-3 text-white" />
               </div>
-              <span className="text-[13px] font-semibold">sales@nexg-marketplace.com</span>
+              <span className="text-[12px] font-semibold">sales@nexg-marketplace.com</span>
             </div>
-            <div className="flex items-center gap-5 uppercase text-[12px] font-semibold">
+            <div className="flex items-center gap-5 uppercase text-[11px] font-semibold">
               <Link href="/bulk-enquiry" className="hover:text-white/80 transition-colors pr-5 border-r border-white/40">Bulk Enquiry</Link>
               <Link href="/contact" className="hover:text-white/80 transition-colors">Contact Us</Link>
             </div>
@@ -159,8 +159,8 @@ const Header = () => {
                 <Image 
                   src="/images/logo/logo-black.png" 
                   alt="NexG Logo" 
-                  width={180} 
-                  height={52} 
+                  width={160} 
+                  height={46} 
                   className="object-contain"
                 />
               </Link>
@@ -170,12 +170,12 @@ const Header = () => {
                   onClick={() => setIsLocationOpen(!isLocationOpen)}
                   className="hidden xl:flex items-center gap-3 text-gray-600 hover:text-brand-blue group transition-colors cursor-pointer"
                 >
-                  <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
-                    <MapPin className="w-4.5 h-4.5" />
+                  <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
+                    <MapPin className="w-4 h-4" />
                   </div>
                   <div className="flex flex-col items-start leading-none">
-                    <span className="text-[10px] uppercase font-semibold text-gray-400">Deliver to</span>
-                    <span className="text-[13px] font-semibold whitespace-nowrap">
+                    <span className="text-[9px] uppercase font-semibold text-gray-400">Deliver to</span>
+                    <span className="text-[12px] font-semibold whitespace-nowrap">
                       {appliedPincode ? `Pincode: ${appliedPincode}` : "Select Location"}
                     </span>
                   </div>
@@ -219,40 +219,40 @@ const Header = () => {
 
             {/* Search Bar - Big Strip */}
             <form onSubmit={handleSearch} className="flex-1 max-w-4xl relative group">
-              <div className="flex w-full items-stretch h-11 border border-gray-300 rounded-lg overflow-hidden focus-within:ring-4 focus-within:ring-brand-blue/10 focus-within:border-brand-blue transition-all">
+              <div className="flex w-full items-stretch h-10 border border-gray-300 rounded-lg overflow-hidden focus-within:ring-4 focus-within:ring-brand-blue/10 focus-within:border-brand-blue transition-all">
                 <input
                   type="text"
                   placeholder="Search Product, Category, Brand etc..."
-                  className="flex-1 px-5 text-[14px] outline-none placeholder:text-gray-400 font-sans"
+                  className="flex-1 px-4 text-[13px] outline-none placeholder:text-gray-400 font-sans"
                   suppressHydrationWarning
                 />
                 <button 
                   type="submit"
-                  className="bg-brand-orange w-11 h-11 flex-shrink-0 flex items-center justify-center text-white hover:bg-brand-orange/90 transition-colors aspect-square cursor-pointer"
+                  className="bg-brand-orange w-10 h-10 flex-shrink-0 flex items-center justify-center text-white hover:bg-brand-orange/90 transition-colors aspect-square cursor-pointer"
                 >
-                  <Search className="w-5 h-5 stroke-[2.5px]" />
+                  <Search className="w-4.5 h-4.5 stroke-[2.5px]" />
                 </button>
               </div>
             </form>
 
             {/* Action Buttons */}
             <div className="flex items-center gap-4 min-w-fit">
-              <Link href="/login" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors">
-                <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Login</span>
+               <Link href="/login" className="flex items-center gap-1.5 group text-gray-700 hover:text-brand-blue transition-colors">
+                <User className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-semibold uppercase whitespace-nowrap">Login</span>
               </Link>
               
-              <Link href="/cart" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors relative border-l pl-4 border-gray-200">
+              <Link href="/cart" className="flex items-center gap-1.5 group text-gray-700 hover:text-brand-blue transition-colors relative border-l pl-3 border-gray-200">
                 <div className="relative">
-                  <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[10px] font-semibold w-4 h-4 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
+                  <ShoppingCart className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
+                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[9px] font-semibold w-3.5 h-3.5 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
                 </div>
-                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Cart</span>
+                <span className="text-[11px] font-semibold uppercase whitespace-nowrap">Cart</span>
               </Link>
 
-              <Link href="/track-order" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors border-l pl-4 border-gray-200">
-                <PackageCheck className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Track Order</span>
+              <Link href="/track-order" className="flex items-center gap-1.5 group text-gray-700 hover:text-brand-blue transition-colors border-l pl-3 border-gray-200">
+                <PackageCheck className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] font-semibold uppercase whitespace-nowrap">Track Order</span>
               </Link>
 
               <button className="lg:hidden p-2 text-gray-700 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -266,17 +266,17 @@ const Header = () => {
       {/* 3. Bottom Row - Categories Navigation (with MEGA MENU) */}
       <div className="bg-white hidden lg:block border-y border-gray-100">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-          <nav className="flex items-center space-x-12 py-3">
+          <nav className="flex items-center space-x-10 py-3">
             {categories.map((item) => (
               <div key={item.name} className="relative group/nav">
-                <button className="flex items-center gap-2 text-[12px] font-semibold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors cursor-pointer py-1">
+                <button className="flex items-center gap-2 text-[11.5px] font-semibold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors cursor-pointer py-1">
                   {item.name}
-                  {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover/nav:text-brand-blue transition-colors" />}
+                  {item.hasDropdown && <ChevronDown className="w-3 h-3 text-gray-400 group-hover/nav:text-brand-blue transition-colors" />}
                 </button>
                 
                 {item.hasDropdown && (
-                  <div className="fixed top-[152px] left-0 right-0 bg-white shadow-2xl border-t border-gray-100 hidden group-hover/nav:block z-[9999] animate-in fade-in slide-in-from-top-2 duration-300">
-                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
+                  <div className="fixed top-[146px] left-0 right-0 bg-white shadow-[0_15px_30px_-5px_rgba(0,0,0,0.1)] hidden group-hover/nav:block z-[9999] animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-3.5 pb-10">
                       <div className="grid grid-cols-4 gap-12">
                         {item.subColumns && item.subColumns.map((col, idx) => (
                           <div key={idx} className="flex flex-col space-y-4">

@@ -30,12 +30,12 @@ const AutomotiveMaintenanceAndLubricants = () => {
           {/* Left Content Side */}
           <div className="w-full lg:w-[30%]">
             <h2 
-              className="!text-white text-[32px] lg:text-[44px] font-semibold tracking-tighter leading-tight mb-6"
+              className="!text-white text-[32px] lg:text-[44px] font-semibold tracking-tighter leading-tight mb-2"
               style={{ color: 'white' }}
             >
               Automotive Maintenance <br className="hidden lg:block" /> and Lubricants
             </h2>
-            <p className="text-white/80 font-medium text-sm lg:text-base mb-10 max-w-[400px]">
+            <p className="text-white/80 font-medium text-sm lg:text-base mb-6 max-w-[400px]">
               Optimize your engine's performance and ensure long-lasting protection with our premium range of car engine oils.
             </p>
             <Link 
