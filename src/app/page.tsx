@@ -9,6 +9,7 @@ import EngineCareCTA from "@/components/homepage/EngineCareCTA";
 import TopCategories from "@/components/homepage/TopCategories";
 import TrendingProducts from "@/components/homepage/TrendingProducts";
 import TrendingBanners from "@/components/homepage/TrendingBanners";
+import RecentlyViewed from "@/components/homepage/RecentlyViewed";
 import ProductsUnder500 from "@/components/homepage/ProductsUnder500";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <EngineCareCTA />
       <TopCategories />
       <TrendingProducts />
+      <RecentlyViewed />
       <TrendingBanners />
       <ProductsUnder500 />
     </div>

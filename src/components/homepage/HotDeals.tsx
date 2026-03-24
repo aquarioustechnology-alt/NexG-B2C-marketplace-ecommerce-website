@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight, Clock } from "lucide-react";
+import Link from "next/link";
+import { Star, ShoppingCart, Heart, Eye, ChevronLeft, ChevronRight, Clock, ArrowRight } from "lucide-react";
 
 const products = [
   {
@@ -132,6 +133,14 @@ const HotDeals = () => {
             </div>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
           </div>
+          
+          <Link 
+            href="/shop" 
+            className="hidden sm:flex items-center gap-2 text-brand-blue font-semibold text-[14px] hover:gap-3 transition-all duration-300 group"
+          >
+            View All
+            <ArrowRight className="w-4 h-4 translate-y-[1px] group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
         {/* Products Slider Wrapping */}
