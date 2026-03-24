@@ -298,8 +298,8 @@ const Header = () => {
                           </div>
                         ))}
                         
-                        {/* Static Promotional Column */}
-                        <div className="bg-gradient-to-br from-brand-blue to-[#0F4E8A] rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+                        {/* Static Promotional Column - Pushed to Absolute Right */}
+                        <div className="col-start-4 bg-gradient-to-br from-brand-blue to-[#0F4E8A] rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
                           <div>
                             <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">Marketplace Offer</span>
                             <h4 className="text-[20px] font-semibold leading-tight mt-2 !text-white">Premium {item.name} <br /> Collection</h4>
