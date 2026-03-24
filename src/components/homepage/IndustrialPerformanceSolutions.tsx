@@ -30,7 +30,7 @@ const IndustrialPerformanceSolutions = () => {
           {/* Right Content Side (swapped from left) */}
           <div className="w-full lg:w-[30%]">
             <h2 
-              className="!text-white text-[32px] lg:text-[44px] font-semibold tracking-tighter leading-tight mb-2"
+              className="!text-white text-[26px] lg:text-[38px] font-semibold tracking-tighter leading-tight mb-2"
               style={{ color: 'white' }}
             >
               Heavy Duty & <br className="hidden lg:block" /> Industrial Solutions
