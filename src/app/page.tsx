@@ -8,8 +8,9 @@ import CarEngineOilsGrid from "@/components/homepage/CarEngineOilsGrid";
 import EngineCareCTA from "@/components/homepage/EngineCareCTA";
 import TopCategories from "@/components/homepage/TopCategories";
 import TrendingProducts from "@/components/homepage/TrendingProducts";
-import TrendingBanners from "@/components/homepage/TrendingBanners";
+import IndustrialPerformanceSolutions from "@/components/homepage/IndustrialPerformanceSolutions";
 import RecentlyViewed from "@/components/homepage/RecentlyViewed";
+import TrendingBanners from "@/components/homepage/TrendingBanners";
 import ProductsUnder500 from "@/components/homepage/ProductsUnder500";
 import AboutUs from "@/components/homepage/AboutUs";
 import FAQ from "@/components/homepage/FAQ";
@@ -27,6 +28,7 @@ export default function Home() {
       <EngineCareCTA />
       <TopCategories />
       <TrendingProducts />
+      <IndustrialPerformanceSolutions />
       <RecentlyViewed />
       <TrendingBanners />
       <ProductsUnder500 />
