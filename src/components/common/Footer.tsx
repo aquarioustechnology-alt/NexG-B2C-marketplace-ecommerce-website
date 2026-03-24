@@ -49,8 +49,36 @@ const Footer = () => {
   return (
     <footer className="bg-[#0B1120] text-white mt-auto font-sans overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 pt-16 pb-8">
-        {/* 1. Main Multi-column Area */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-16">
+        {/* 1. Branding & Socials Row - Now at Top */}
+        <div className="flex flex-col md:flex-row items-center justify-between pb-6 gap-8">
+          <Link href="/">
+            <Image 
+              src="/images/logo/logo-white.png" 
+              alt="Get Lubricants Logo" 
+              width={260} 
+              height={80} 
+              className="object-contain"
+            />
+          </Link>
+          
+          <div className="flex items-center gap-6">
+            <span className="text-[14px] font-semibold text-white/80 tracking-wide">Follow us on</span>
+            <div className="flex gap-4">
+              {[Facebook, Twitter, Youtube, Instagram].map((Icon, idx) => (
+                <Link 
+                  key={idx} 
+                  href="#" 
+                  className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-[#0B1120] transition-all duration-300 group"
+                >
+                  <Icon className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Main Multi-column Area - Now below Socials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 py-10 border-t border-white/10">
           <div className="space-y-6 lg:col-span-1">
             <h3 className="text-[16px] font-semibold text-white tracking-tight">Shop Categories</h3>
             <ul className="space-y-3 text-[14px] text-white/60 font-medium">
@@ -104,34 +132,6 @@ const Footer = () => {
                 <div className="absolute inset-0 w-0 bg-white group-hover:w-full transition-all duration-500 ease-out opacity-20" />
                 <span className="relative z-10">Submit</span>
               </button>
-            </div>
-          </div>
-        </div>
-
-        {/* 2. Branding & Socials Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between py-6 border-t border-white/10 gap-8">
-          <Link href="/">
-            <Image 
-              src="/images/logo/logo-white.png" 
-              alt="Get Lubricants Logo" 
-              width={210} 
-              height={64} 
-              className="object-contain"
-            />
-          </Link>
-          
-          <div className="flex items-center gap-6">
-            <span className="text-[14px] font-semibold text-white/80 tracking-wide">Follow us on</span>
-            <div className="flex gap-4">
-              {[Facebook, Twitter, Youtube, Instagram].map((Icon, idx) => (
-                <Link 
-                  key={idx} 
-                  href="#" 
-                  className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-[#0B1120] transition-all duration-300 group"
-                >
-                  <Icon className="w-4.5 h-4.5 group-hover:scale-110 transition-transform" />
-                </Link>
-              ))}
             </div>
           </div>
         </div>

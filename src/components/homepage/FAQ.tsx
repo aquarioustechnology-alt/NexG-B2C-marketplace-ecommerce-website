@@ -18,7 +18,7 @@ const faqs = [
     answer: "We typically deliver within 3-5 business days for major cities and 5-7 business days for regional areas, ensuring your products arrive safely through our certified logistics partners."
   },
   {
-    question: "Are all products on NexG Marketplace 100% authentic?",
+    question: "Are all products on Get Lubricants 100% authentic?",
     answer: "Absolutely. We only source directly from brand authorized distributors and manufacturers. Every product undergoes strict quality checks and comes with original batch numbers."
   },
   {

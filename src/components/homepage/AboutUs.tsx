@@ -26,7 +26,7 @@ const AboutUs = () => {
         
         {/* Description - Reduced to 15px */}
         <p className="text-white/80 text-[15px] leading-relaxed mb-10 font-medium max-w-[850px] mx-auto">
-          At NexG B2C Marketplace, we are committed to providing the highest quality engine oils, lubricants, and petroleum products. 
+          At Get Lubricants, we are committed to providing the highest quality engine oils, lubricants, and petroleum products. 
           With a focus on performance and protection, we bring world-class brands to your doorstep, 
           empowering vehicles and industries across India.
         </p>

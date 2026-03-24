@@ -141,7 +141,7 @@ const Header = () => {
               <div className="w-6 h-6 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
                 <Mail className="w-3 h-3 text-white" />
               </div>
-              <span className="text-[12px] font-semibold">sales@nexg-marketplace.com</span>
+              <span className="text-[12px] font-semibold">sales@getlubricants.com</span>
             </div>
             <div className="flex items-center gap-5 uppercase text-[11px] font-semibold">
               <Link href="/bulk-enquiry" className="hover:text-white/80 transition-colors pr-5 border-r border-white/40">Bulk Enquiry</Link>
@@ -160,7 +160,7 @@ const Header = () => {
               <Link href="/" className="flex-shrink-0">
                 <Image 
                   src="/images/logo/logo-black.png" 
-                  alt="NexG Logo" 
+                  alt="Get Lubricants Logo" 
                   width={160} 
                   height={46} 
                   className="object-contain"
@@ -331,7 +331,7 @@ const Header = () => {
         <div className="lg:hidden bg-white fixed inset-0 z-50 animate-in slide-in-from-right duration-300">
           <div className="p-6 h-full flex flex-col">
             <div className="flex items-center justify-between mb-8">
-              <Image src="/images/logo/logo-black.png" alt="NexG Logo" width={140} height={40} className="object-contain" />
+              <Image src="/images/logo/logo-black.png" alt="Get Lubricants Logo" width={140} height={40} className="object-contain" />
               <button onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
             </div>
             
