@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Search, ShoppingCart, User, Menu, X, Phone, Mail, MapPin, ChevronDown, PackageCheck } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, X, Phone, Mail, MapPin, ChevronDown, PackageCheck, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useCart } from "@/context/CartContext";
 
@@ -13,6 +13,8 @@ const Header = () => {
   const [pincode, setPincode] = useState("");
   const [appliedPincode, setAppliedPincode] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -219,23 +221,127 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Search Bar - Big Strip */}
-            <form onSubmit={handleSearch} className="flex-1 max-w-4xl relative group">
-              <div className="flex w-full items-stretch h-10 border border-gray-300 rounded-lg overflow-hidden focus-within:ring-4 focus-within:ring-brand-blue/10 focus-within:border-brand-blue transition-all">
-                <input
-                  type="text"
-                  placeholder="Search Product, Category, Brand etc..."
-                  className="flex-1 px-4 text-[13px] outline-none placeholder:text-gray-400 font-sans"
-                  suppressHydrationWarning
-                />
+            {/* Moglix-style Innovative Search */}
+            <div className="flex-1 max-w-4xl relative group">
+              <form 
+                onSubmit={handleSearch} 
+                className={`relative flex w-full h-11 border rounded-xl overflow-visible transition-all duration-300 ${
+                  isSearchFocused 
+                  ? "border-brand-blue bg-white" 
+                  : "border-gray-200 bg-gray-50/50 hover:border-gray-300 hover:bg-white"
+                }`}
+              >
+                <div className="flex-1 flex items-center px-4">
+                  <Search className={`w-4.5 h-4.5 transition-colors duration-300 ${isSearchFocused ? "text-brand-blue" : "text-gray-400"}`} />
+                  <input
+                    type="text"
+                    placeholder="Search for oils, brands, parts..."
+                    className="flex-1 px-3.5 text-[14px] bg-transparent outline-none placeholder:text-gray-400 font-medium font-sans"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onFocus={() => setIsSearchFocused(true)}
+                    onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
+                    suppressHydrationWarning
+                  />
+                  {searchQuery && (
+                    <button 
+                      type="button" 
+                      onClick={() => setSearchQuery("")}
+                      className="p-1 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5 text-gray-400" />
+                    </button>
+                  )}
+                </div>
+                
                 <button 
                   type="submit"
-                  className="bg-brand-orange w-10 h-10 flex-shrink-0 flex items-center justify-center text-white hover:bg-brand-orange/90 transition-colors aspect-square cursor-pointer"
+                  className="bg-brand-blue px-6 flex items-center justify-center text-white hover:bg-[#00569d] transition-all duration-300 font-bold text-[13px] rounded-r-[10px] cursor-pointer"
                 >
-                  <Search className="w-4.5 h-4.5 stroke-[2.5px]" />
+                  SEARCH
                 </button>
-              </div>
-            </form>
+
+                {/* Moglix-style Suggestions Dropdown - Flat & Structured */}
+                {isSearchFocused && searchQuery.length > 0 && (
+                  <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white rounded-xl border border-gray-200 overflow-hidden z-[100] animate-in fade-in slide-in-from-top-1 duration-200">
+                    <div className="flex flex-col">
+                      {/* Section 1: Top Suggestion Keywords */}
+                      <div className="p-4 border-b border-gray-50">
+                        <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Suggestions</h4>
+                        <div className="space-y-1">
+                          {["Engine Oil", "Synthetic Fluid", "Mechanical Grease", "Industrial Lubricant"].map((keyword) => (
+                            <button 
+                              key={keyword}
+                              onClick={() => setSearchQuery(keyword)}
+                              className="w-full flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg transition-all group/item cursor-pointer"
+                            >
+                              <div className="flex items-center gap-3">
+                                <Search className="w-3.5 h-3.5 text-gray-300 group-hover/item:text-brand-blue" />
+                                <span className="text-[13px] font-semibold text-gray-700 group-hover/item:text-brand-blue">
+                                  {keyword.toLowerCase().includes(searchQuery.toLowerCase()) ? (
+                                    <>
+                                      <span className="font-extrabold">{keyword.substring(0, searchQuery.length)}</span>
+                                      {keyword.substring(searchQuery.length)}
+                                    </>
+                                  ) : keyword}
+                                </span>
+                              </div>
+                              <ArrowRight className="w-3.5 h-3.5 text-brand-blue opacity-0 group-hover/item:opacity-100 transition-opacity" />
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Section 2: Recommended Products (New Small Cards) */}
+                      <div className="p-4 border-t border-gray-50 flex flex-col gap-3">
+                        <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Recommended Products</h4>
+                        <div className="flex flex-col gap-2">
+                          {[
+                            { name: "Motul 8100 X-cess 5W40 - 1L", price: "₹1,250", brand: "Motul", img: "/images/Products/product image 1.jpg" },
+                            { name: "Shell Helix Ultra Fully Synthetic", price: "₹3,100", brand: "Shell", img: "/images/Products/product image 2.jpg" },
+                            { name: "Castrol Magnetic 10W-40 - 3.5L", price: "₹2,450", brand: "Castrol", img: "/images/Products/product image 3.jpg" }
+                          ].map((prod, idx) => (
+                            <Link 
+                              key={idx} 
+                              href="#" 
+                              className="group/prod flex items-center justify-between p-2 rounded-xl transition-all hover:bg-gray-50 cursor-pointer border border-transparent hover:border-gray-100"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-white rounded-lg border border-gray-100 flex items-center justify-center p-1 group-hover/prod:border-brand-blue/20 transition-colors overflow-hidden">
+                                  <Image 
+                                    src={prod.img} 
+                                    alt={prod.name} 
+                                    width={40} 
+                                    height={40} 
+                                    className="object-contain"
+                                  />
+                                </div>
+                                <div className="flex flex-col">
+                                  <span className="text-[12px] font-bold text-gray-700 leading-tight group-hover/prod:text-brand-blue">{prod.name}</span>
+                                  <span className="text-[10px] text-gray-400 font-medium">{prod.brand}</span>
+                                </div>
+                              </div>
+                              <div className="flex flex-col items-end">
+                                <span className="text-[13px] font-extrabold text-[#222222]">{prod.price}</span>
+                                <span className="text-[9px] font-bold text-brand-orange">BEST SELLER</span>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Section 3: Professional Checkout Hint */}
+                      <div className="bg-gray-50/80 p-3 px-5 flex items-center justify-between border-t border-gray-100">
+                        <p className="text-[11px] font-semibold text-gray-500">
+                          Search results for "<span className="text-brand-blue font-bold">{searchQuery}</span>"
+                        </p>
+                        <ArrowRight className="w-3.5 h-3.5 text-brand-blue animate-bounce-x" />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </form>
+            </div>
 
             {/* Action Buttons */}
             <div className="flex items-center gap-4 min-w-fit">
