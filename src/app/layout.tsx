@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import ChatBot from "@/components/common/ChatBot";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -11,8 +12,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "NexG Marketplace | Premium B2C Ecommerce",
-  description: "Experience the next generation of online shopping with NexG Marketplace.",
+  title: "Get Lubricants | Premium B2C Ecommerce",
+  description: "Experience the next generation of online shopping with Get Lubricants.",
 };
 
 export default function RootLayout({
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
