@@ -5,12 +5,12 @@ import { ArrowRight } from "lucide-react";
 
 const TrendingBanners = () => {
   return (
-    <section className="bg-white py-[60px]">
+    <section className="bg-white py-0">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
          {/* Section Heading - Centered */}
          <div className="flex items-center justify-center gap-4 mb-10 px-1">
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
-            <h2 className="text-[28px] lg:text-[32px] font-black text-[#222222] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
               Premium Automotive Offers
             </h2>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
@@ -31,7 +31,7 @@ const TrendingBanners = () => {
             <div className="absolute bottom-10 left-10 translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-90 group-hover:opacity-100">
               <div className="relative px-10 py-3.5 bg-brand-blue rounded-lg text-white font-bold text-[16px] inline-flex items-center gap-3 group/btnInner transition-all duration-300 transform overflow-hidden pointer-events-auto">
                 <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btnInner:w-full transition-all duration-500 ease-out" />
-                <span className="relative z-10">Shop Now</span>
+                <span className="relative z-10 font-semibold">Shop Now</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-all duration-500 group-hover/btnInner:translate-x-1.5" />
               </div>
             </div>
@@ -49,7 +49,7 @@ const TrendingBanners = () => {
             <div className="absolute bottom-10 left-10 translate-y-2 group-hover:translate-y-0 transition-all duration-500 opacity-90 group-hover:opacity-100">
               <div className="relative px-10 py-3.5 bg-brand-blue rounded-lg text-white font-bold text-[16px] inline-flex items-center gap-3 group/btnInner transition-all duration-300 transform overflow-hidden pointer-events-auto">
                 <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btnInner:w-full transition-all duration-500 ease-out" />
-                <span className="relative z-10">Shop Now</span>
+                <span className="relative z-10 font-semibold">Shop Now</span>
                 <ArrowRight className="relative z-10 w-5 h-5 transition-all duration-500 group-hover/btnInner:translate-x-1.5" />
               </div>
             </div>

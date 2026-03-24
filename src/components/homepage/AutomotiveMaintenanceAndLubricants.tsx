@@ -40,7 +40,7 @@ const AutomotiveMaintenanceAndLubricants = () => {
             </p>
             <Link 
               href="/shop" 
-              className="relative px-8 py-3.5 border border-white bg-transparent rounded-lg text-white font-bold text-[16px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+              className="relative px-8 py-3.5 border border-white bg-transparent rounded-lg text-white font-semibold text-[16px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
             >
               {/* Left-to-Right White Sweep Layer */}
               <div className="absolute inset-0 w-0 bg-white group-hover/btn:w-full transition-all duration-500 ease-out" />
@@ -67,7 +67,7 @@ const AutomotiveMaintenanceAndLubricants = () => {
                   
                   {/* Highlight Section at Bottom - Brand Orange default, Brand Red on Hover */}
                   <div className="absolute bottom-0 left-0 right-0 bg-brand-orange py-3 text-center transition-all duration-500 group-hover:bg-brand-red z-20">
-                    <span className="text-white text-[12px] lg:text-[13px] font-black uppercase tracking-widest">
+                    <span className="text-white text-[12px] lg:text-[13px] font-semibold uppercase tracking-widest">
                       {product.highlight}
                     </span>
                   </div>

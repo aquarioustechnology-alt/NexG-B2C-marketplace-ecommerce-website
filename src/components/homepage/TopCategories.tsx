@@ -45,7 +45,7 @@ const TopCategories = () => {
         {/* Section Heading - Centered with balanced side lines */}
         <div className="flex items-center justify-center gap-6 mb-12 px-1">
           <div className="h-[2px] w-20 bg-brand-blue rounded-full" />
-          <h2 className="text-[28px] lg:text-[32px] font-black text-[#222222] tracking-tighter whitespace-nowrap">
+          <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter whitespace-nowrap">
             Our Product Categories
           </h2>
           <div className="h-[2px] w-20 bg-brand-blue rounded-full" />
@@ -72,14 +72,14 @@ const TopCategories = () => {
                     {/* Interior White Sweep Animation */}
                     <div className="absolute inset-0 w-0 bg-white group-hover/btnInner:w-full transition-all duration-500 ease-out" />
                     
-                    <span className="relative z-10 transition-colors duration-500 group-hover/btnInner:text-brand-blue">View All</span>
+                    <span className="relative z-10 transition-colors duration-500 group-hover/btnInner:text-brand-blue font-semibold">View All</span>
                     <ArrowRight className="relative z-10 w-4 h-4 transition-all duration-500 group-hover/btnInner:translate-x-1.5 group-hover/btnInner:text-brand-blue" />
                   </div>
                 </div>
               </div>
 
               {/* Category Name Below Image */}
-              <h3 className="mt-6 text-[18px] font-black text-[#222222] tracking-tight group-hover:text-brand-blue transition-colors text-center">
+              <h3 className="mt-6 text-[18px] font-semibold text-[#222222] tracking-tight group-hover:text-brand-blue transition-colors text-center">
                 {category.name}
               </h3>
             </div>

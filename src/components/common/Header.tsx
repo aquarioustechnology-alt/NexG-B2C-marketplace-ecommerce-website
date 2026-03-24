@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_4px_6px_-2px_rgba(0,0,0,0.05)] font-sans">
       {/* 1. Top Strip - Contact Info (Hidden on Scroll) */}
-      <div className={`bg-brand-blue text-white overflow-hidden transition-all duration-300 ease-in-out ${scrolled ? "max-h-0 opacity-0 py-0" : "max-h-[100px] opacity-100 py-2"}`}>
+      <div className="bg-brand-blue text-white overflow-hidden transition-all duration-300 ease-in-out py-2">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 tracking-wide">
           <div className="flex items-center text-center sm:text-left">
             <span className="text-[14px] font-semibold">Trusted Marketplace For Engine Oils, Lubricants & Petroleum Products</span>
@@ -60,15 +60,15 @@ const Header = () => {
               <div className="w-7 h-7 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
                 <Phone className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="text-[13px] font-bold">+91 1800 123 4567</span>
+              <span className="text-[13px] font-semibold">+91 1800 123 4567</span>
             </div>
             <div className="flex items-center gap-2.5 pr-5 border-r border-white/40 whitespace-nowrap">
               <div className="w-7 h-7 bg-[#0F4E8A] rounded-full flex items-center justify-center shadow-sm">
                 <Mail className="w-3.5 h-3.5 text-white" />
               </div>
-              <span className="text-[13px] font-bold">sales@nexg-marketplace.com</span>
+              <span className="text-[13px] font-semibold">sales@nexg-marketplace.com</span>
             </div>
-            <div className="flex items-center gap-5 uppercase text-[12px] font-bold">
+            <div className="flex items-center gap-5 uppercase text-[12px] font-semibold">
               <Link href="/bulk-enquiry" className="hover:text-white/80 transition-colors pr-5 border-r border-white/40">Bulk Enquiry</Link>
               <Link href="/contact" className="hover:text-white/80 transition-colors">Contact Us</Link>
             </div>
@@ -101,8 +101,8 @@ const Header = () => {
                     <MapPin className="w-4.5 h-4.5" />
                   </div>
                   <div className="flex flex-col items-start leading-none">
-                    <span className="text-[10px] uppercase font-bold text-gray-400">Deliver to</span>
-                    <span className="text-[13px] font-bold whitespace-nowrap">
+                    <span className="text-[10px] uppercase font-semibold text-gray-400">Deliver to</span>
+                    <span className="text-[13px] font-semibold whitespace-nowrap">
                       {appliedPincode ? `Pincode: ${appliedPincode}` : "Select Location"}
                     </span>
                   </div>
@@ -133,7 +133,7 @@ const Header = () => {
                       <div className="pt-2">
                         <button 
                           type="button"
-                          className="text-brand-blue text-[12px] font-bold hover:underline"
+                          className="text-brand-blue text-[12px] font-semibold hover:underline"
                         >
                           Use Current Location
                         </button>
@@ -166,20 +166,20 @@ const Header = () => {
             <div className="flex items-center gap-4 min-w-fit">
               <Link href="/login" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors">
                 <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[12px] font-bold uppercase whitespace-nowrap">Login</span>
+                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Login</span>
               </Link>
               
               <Link href="/cart" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors relative border-l pl-4 border-gray-200">
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
+                  <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[10px] font-semibold w-4 h-4 flex items-center justify-center rounded-full ring-2 ring-white">0</span>
                 </div>
-                <span className="text-[12px] font-bold uppercase whitespace-nowrap">Cart</span>
+                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Cart</span>
               </Link>
 
               <Link href="/track-order" className="flex items-center gap-2 group text-gray-700 hover:text-brand-blue transition-colors border-l pl-4 border-gray-200">
                 <PackageCheck className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[12px] font-bold uppercase whitespace-nowrap">Track Order</span>
+                <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Track Order</span>
               </Link>
 
               <button className="lg:hidden p-2 text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -212,7 +212,7 @@ const Header = () => {
               </div>
             ))}
             <div className="flex-1"></div>
-            <Link href="/offers" className="text-[11px] font-bold text-brand-orange hover:text-brand-orange/80 uppercase tracking-tight flex items-center gap-2">
+            <Link href="/offers" className="text-[11px] font-semibold text-brand-orange hover:text-brand-orange/80 uppercase tracking-tight flex items-center gap-2">
               🔥 Today's Offers
             </Link>
           </nav>

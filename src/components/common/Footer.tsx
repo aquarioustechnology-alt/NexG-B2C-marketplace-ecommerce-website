@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Quick Shop</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Quick Shop</h3>
             <ul className="space-y-3 text-sm text-gray-400 font-medium">
               <li><Link href="/shop" className="hover:text-brand-blue transition-colors">Electronics</Link></li>
               <li><Link href="/shop" className="hover:text-brand-blue transition-colors">Fashion</Link></li>
@@ -51,7 +51,7 @@ const Footer = () => {
 
           {/* Support Links */}
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Support</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Support</h3>
             <ul className="space-y-3 text-sm text-gray-400 font-medium">
               <li><Link href="/track" className="hover:text-brand-blue transition-colors">Track Order</Link></li>
               <li><Link href="/returns" className="hover:text-brand-blue transition-colors">Return Policy</Link></li>
@@ -64,7 +64,7 @@ const Footer = () => {
           {/* Contact & Newsletter */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Visit Us</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#FFFFFF] border-b border-gray-800 pb-3 font-sans">Visit Us</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-sm text-gray-400 font-medium">
                   <MapPin className="w-4 h-4 text-brand-blue" />
@@ -82,7 +82,7 @@ const Footer = () => {
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-tight text-gray-300 font-sans">Subscribe for Updates</h4>
+              <h4 className="text-xs font-semibold uppercase tracking-tight text-gray-300 font-sans">Subscribe for Updates</h4>
               <div className="flex p-1 bg-gray-800 border-gray-700 rounded-xl overflow-hidden border focus-within:border-brand-blue transition-colors shadow-inner">
                 <input
                   type="email"
@@ -92,7 +92,7 @@ const Footer = () => {
                 />
                 <button 
                   suppressHydrationWarning
-                  className="bg-brand-blue hover:bg-brand-blue/90 text-white px-5 py-2.5 text-xs font-bold transition-all rounded-lg"
+                  className="bg-brand-blue hover:bg-brand-blue/90 text-white px-5 py-2.5 text-xs font-semibold transition-all rounded-lg"
                 >
                   Join
                 </button>

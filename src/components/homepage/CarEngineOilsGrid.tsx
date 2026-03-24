@@ -137,7 +137,7 @@ const CarEngineOilsGrid = () => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-8 px-1">
           <div className="flex items-center gap-4">
-            <h2 className="text-[28px] lg:text-[32px] font-black text-[#222222] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
               Engine Oils For Car
             </h2>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
@@ -147,7 +147,7 @@ const CarEngineOilsGrid = () => {
             {/* View All Button - Hero Style (No Shadow) */}
             <Link 
               href="/shop" 
-              className="relative px-8 py-2.5 bg-brand-blue rounded-lg text-white font-bold text-[14px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer"
+              className="relative px-8 py-2.5 bg-brand-blue rounded-lg text-white font-semibold text-[14px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer"
             >
               {/* Left-to-Right Orange Sweep Layer */}
               <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
@@ -191,7 +191,7 @@ const CarEngineOilsGrid = () => {
                 >
                   <div className="group flex flex-col transition-all duration-500 bg-white overflow-hidden">
                     <div className="relative aspect-square bg-white border border-gray-200/60 rounded-2xl p-10 overflow-hidden flex items-center justify-center group-hover:border-brand-blue/40 transition-colors duration-300">
-                      <div className="absolute top-3 left-3 z-10 bg-brand-red text-white text-[9px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                      <div className="absolute top-3 left-3 z-10 bg-brand-red text-white text-[9px] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wider">
                         {product.discount}
                       </div>
                       
@@ -218,7 +218,7 @@ const CarEngineOilsGrid = () => {
                       </div>
 
                       <div className="absolute bottom-[-60px] group-hover:bottom-0 left-0 right-0 z-20 p-3 transition-all duration-500">
-                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
+                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
                           <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
                           <ShoppingCart className="relative z-10 w-4.5 h-4.5" />
                           <span className="relative z-10">Add to Cart</span>
@@ -234,18 +234,18 @@ const CarEngineOilsGrid = () => {
                             className={`w-3 h-3 ${i < Math.floor(product.rating) ? "fill-brand-orange text-brand-orange" : "text-gray-300"}`} 
                           />
                         ))}
-                        <span className="text-[10px] text-gray-500 font-bold ml-1">{product.rating}</span>
+                        <span className="text-[10px] text-gray-500 font-semibold ml-1">{product.rating}</span>
                       </div>
 
-                      <h3 className="text-[#222222] font-black leading-snug mb-1.5 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
+                      <h3 className="text-[#222222] font-semibold leading-snug mb-1.5 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
                         {product.name}
                       </h3>
 
                       <div className="flex items-center gap-3 mb-2.5">
-                        <span className="text-[18px] font-black text-brand-blue">
+                        <span className="text-[18px] font-semibold text-brand-blue">
                           ₹{product.price.toLocaleString()}
                         </span>
-                        <span className="text-[14px] font-bold text-brand-red line-through">
+                        <span className="text-[14px] font-semibold text-brand-red line-through">
                           ₹{product.originalPrice.toLocaleString()}
                         </span>
                       </div>
@@ -255,7 +255,7 @@ const CarEngineOilsGrid = () => {
                           <button 
                             key={size}
                             onClick={() => selectSize(product.id, size)}
-                            className={`px-4 py-2 border rounded-lg text-[11px] font-black uppercase transition-all cursor-pointer ${
+                            className={`px-4 py-2 border rounded-lg text-[11px] font-semibold uppercase transition-all cursor-pointer ${
                               selectedSizes[product.id] === size 
                               ? "bg-brand-blue text-white border-transparent shadow-md" 
                               : "bg-white text-black border-brand-blue/50"

@@ -26,7 +26,7 @@ const badges = [
 
 const TrustBadges = () => {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-[#F4F8FB] py-10">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         <div className="flex flex-wrap lg:flex-nowrap justify-between items-center lg:divide-x lg:divide-gray-200">
           {badges.map((badge, index) => (

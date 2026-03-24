@@ -120,14 +120,13 @@ const HotDeals = () => {
   };
 
   return (
-    <section className="bg-white pt-0 pb-[60px]">
+    <section className="bg-white pt-10 pb-[60px]">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="flex items-center justify-between mb-8 px-1">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <Clock className="w-8 h-8 text-brand-blue" />
-              <h2 className="text-[28px] lg:text-[32px] font-black text-[#222222] tracking-tighter">
+              <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
                 Hot Deals
               </h2>
             </div>
@@ -170,7 +169,7 @@ const HotDeals = () => {
                   <div className="group flex flex-col transition-all duration-500 bg-white overflow-hidden">
                     {/* Product Image Container */}
                     <div className="relative aspect-square bg-white border border-gray-200/60 rounded-2xl p-10 overflow-hidden flex items-center justify-center group-hover:border-brand-blue/40 transition-colors duration-300">
-                      <div className="absolute top-3 left-3 z-10 bg-brand-red text-white text-[9px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                      <div className="absolute top-3 left-3 z-10 bg-brand-red text-white text-[9px] font-semibold px-2 py-0.5 rounded-sm uppercase tracking-wider">
                         {product.discount}
                       </div>
                       
@@ -199,7 +198,7 @@ const HotDeals = () => {
 
                       {/* Add to Cart */}
                       <div className="absolute bottom-[-60px] group-hover:bottom-0 left-0 right-0 z-20 p-3 transition-all duration-500">
-                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-bold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
+                        <button className="relative w-full bg-brand-blue text-white py-3 rounded-xl font-semibold text-[13px] flex items-center justify-center gap-2 shadow-lg overflow-hidden group/btn cursor-pointer font-sans">
                           <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
                           <ShoppingCart className="relative z-10 w-4.5 h-4.5" />
                           <span className="relative z-10">Add to Cart</span>
@@ -216,25 +215,25 @@ const HotDeals = () => {
                             className={`w-3 h-3 ${i < Math.floor(product.rating) ? "fill-brand-orange text-brand-orange" : "text-gray-300"}`} 
                           />
                         ))}
-                        <span className="text-[10px] text-gray-500 font-bold ml-1">{product.rating}</span>
+                        <span className="text-[10px] text-gray-500 font-semibold ml-1">{product.rating}</span>
                       </div>
 
-                      <h3 className="text-[#222222] font-black leading-snug mb-1.5 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
+                      <h3 className="text-[#222222] font-semibold leading-snug mb-1.5 line-clamp-2 min-h-[38px] hover:text-brand-blue cursor-pointer transition-colors text-[14px] tracking-tight">
                         {product.name}
                       </h3>
 
                       <div className="flex flex-col gap-1.5 mb-2.5">
                         <div className="flex items-center gap-3">
-                          <span className="text-[18px] font-black text-brand-blue">
+                          <span className="text-[18px] font-semibold text-brand-blue">
                             ₹{product.price.toLocaleString()}
                           </span>
-                          <span className="text-[14px] font-bold text-gray-400 line-through">
+                          <span className="text-[14px] font-semibold text-gray-400 line-through">
                             ₹{product.originalPrice.toLocaleString()}
                           </span>
                         </div>
                         <div className="bg-brand-red rounded-md py-1.5 px-3 flex items-center gap-2 w-fit">
                           <Clock className="w-3.5 h-3.5 text-white" />
-                          <span className="text-white text-[10px] font-black uppercase tracking-wider">Limited Time Deal</span>
+                          <span className="text-white text-[10px] font-semibold uppercase tracking-wider">Limited Time Deal</span>
                         </div>
                       </div>
 
@@ -244,7 +243,7 @@ const HotDeals = () => {
                           <button 
                             key={size}
                             onClick={() => selectSize(product.id, size)}
-                            className={`px-4 py-2 border rounded-lg text-[11px] font-black uppercase transition-all cursor-pointer ${
+                            className={`px-4 py-2 border rounded-lg text-[11px] font-semibold uppercase transition-all cursor-pointer ${
                               selectedSizes[product.id] === size 
                               ? "bg-brand-blue text-white border-transparent shadow-md" 
                               : "bg-white text-black border-brand-blue/50"
