@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Plus, Minus, HelpCircle, ChevronRight } from "lucide-react";
+import { Plus, Minus, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const faqs = [
@@ -31,80 +31,78 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-gray-50 py-24 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-blue/[0.02] -skew-x-12 z-0" />
-      
+    <section className="bg-white py-20 overflow-hidden relative">
       <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
           {/* Left Side Content */}
           <div className="w-full lg:w-[40%]">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-blue text-white rounded-lg mb-6 shadow-lg shadow-brand-blue/20 transform -skew-x-12">
-              <HelpCircle className="w-4 h-4 skew-x-12" />
-              <span className="font-semibold text-[11px] uppercase tracking-[2px] skew-x-12">Support Center</span>
-            </div>
-            
-            <h2 className="text-[40px] lg:text-[52px] font-semibold text-[#222222] leading-[1] tracking-tighter mb-8">
+            <h2 className="text-[30px] lg:text-[34px] font-semibold text-[#222222] leading-[1.1] tracking-tighter mb-4">
               Got Questions? <br /> <span className="text-brand-blue">We have Answers.</span>
             </h2>
             
-            <p className="text-gray-500 text-[16px] leading-relaxed mb-12 font-medium max-w-[480px]">
+            <p className="text-black text-[15px] leading-relaxed mb-10 font-medium max-w-[480px]">
               Explore our frequently asked questions to find quick answers about our products, delivery, and services.
             </p>
 
-            <div className="flex flex-col gap-4">
+            {/* Action Buttons - Single Row with Animation */}
+            <div className="flex flex-wrap items-center gap-3">
               <Link 
                 href="/contact" 
-                className="group flex items-center justify-between p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-brand-blue/20 transition-all duration-300"
+                className="relative px-6 py-3.5 bg-brand-blue rounded-xl text-white font-semibold text-[14px] inline-flex items-center gap-3 group overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-blue/20"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-orange-light rounded-xl flex items-center justify-center text-brand-orange">
-                     <HelpCircle className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-[#222222] font-semibold text-[16px]">Need more help?</h4>
-                    <p className="text-gray-400 text-[12px] font-semibold">Talk to our experts directly</p>
-                  </div>
-                </div>
-                <ChevronRight className="w-5 h-5 text-gray-300 group-hover:text-brand-blue transition-colors group-hover:translate-x-1" />
+                <div className="absolute inset-0 w-0 bg-brand-orange group-hover:w-full transition-all duration-500 ease-out" />
+                <span className="relative z-10">Contact Us</span>
+                <ArrowRight className="relative z-10 w-4.5 h-4.5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+
+              <Link 
+                href="/bulk-enquiry" 
+                className="relative px-6 py-3.5 border-2 border-brand-orange text-brand-orange bg-transparent rounded-xl font-semibold text-[14px] inline-flex items-center gap-3 group overflow-hidden transition-all duration-300 hover:text-white"
+              >
+                <div className="absolute inset-0 w-0 bg-brand-orange group-hover:w-full transition-all duration-500 ease-out" />
+                <span className="relative z-10">Request Bulk Enquiry</span>
+                <ArrowRight className="relative z-10 w-4.5 h-4.5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>
           </div>
 
-          {/* FAQ Accordion Side */}
-          <div className="w-full lg:w-[60%] flex flex-col gap-4">
+          {/* FAQ Accordion Side - Rounded 16px and Squeezed */}
+          <div className="w-full lg:w-[60%] flex flex-col gap-3">
             {faqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
               return (
                 <div 
                   key={idx} 
-                  className={`group bg-white rounded-[24px] border transition-all duration-500 overflow-hidden ${
+                  className={`group bg-white rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen 
-                    ? "border-brand-blue/30 shadow-2xl shadow-brand-blue/10 translate-x-2" 
-                    : "border-gray-100 shadow-sm hover:border-gray-200"
+                    ? "border-brand-blue/30" 
+                    : "border-gray-200 hover:border-brand-blue/20 shadow-none hover:shadow-sm"
                   }`}
                 >
                   <button 
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
-                    className="w-full flex items-center justify-between p-6 lg:p-8 outline-none text-left cursor-pointer"
+                    className={`w-full flex items-center justify-between outline-none text-left cursor-pointer transition-all duration-300 ${
+                      isOpen ? "p-4 lg:p-5" : "p-3.5 lg:p-4"
+                    }`}
                   >
-                    <span className={`text-[17px] lg:text-[19px] font-semibold tracking-tight leading-snug transition-colors duration-300 ${
+                    <span className={`text-[15px] font-semibold tracking-tight transition-colors duration-300 ${
                       isOpen ? "text-brand-blue" : "text-[#222222] group-hover:text-brand-blue"
                     }`}>
                       {faq.question}
                     </span>
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${
                       isOpen ? "bg-brand-blue text-white rotate-180" : "bg-gray-50 text-gray-400 group-hover:bg-brand-blue group-hover:text-white"
                     }`}>
-                      {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </div>
                   </button>
                   
-                  <div className={`transition-all duration-700 ease-in-out ${
-                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                  <div className={`transition-all duration-500 ease-in-out ${
+                    isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
                   }`}>
-                    <div className="px-6 lg:px-8 pb-8">
-                      <div className="w-full h-px bg-gray-50 mb-6" />
-                      <p className="text-gray-500 text-[15px] lg:text-[16px] leading-relaxed font-semibold">
+                    <div className="px-5 pb-5">
+                      <div className="w-full h-px bg-gray-200 mb-2" />
+                      <p className="text-black text-[14px] leading-relaxed font-normal">
                         {faq.answer}
                       </p>
                     </div>
