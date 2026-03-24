@@ -15,6 +15,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Get Lubricants | Premium B2C Ecommerce",
   description: "Experience the next generation of online shopping with Get Lubricants.",
+  icons: {
+    icon: "/images/logo/Fabicon.png",
+    shortcut: "/images/logo/Fabicon.png",
+    apple: "/images/logo/Fabicon.png",
+  },
 };
 
 export default function RootLayout({
