@@ -41,10 +41,10 @@ const TrustBadges = () => {
 
               {/* Text Content */}
               <div className="flex flex-col">
-                <h3 className="text-[#222222] text-[16px] font-extrabold tracking-tight mb-0.5">
+                <h3 className="text-[#222222] text-[16px] font-semibold tracking-tight mb-0.5">
                   {badge.title}
                 </h3>
-                <p className="text-gray-500 text-[13px] font-bold leading-tight">
+                <p className="text-gray-500 text-[13px] font-semibold leading-tight">
                   {badge.desc}
                 </p>
               </div>

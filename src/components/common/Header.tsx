@@ -39,12 +39,85 @@ const Header = () => {
   };
 
   const categories = [
-    { name: "Engine Oils", hasDropdown: true },
-    { name: "Industrial Oils", hasDropdown: true },
-    { name: "Greases", hasDropdown: true },
-    { name: "Automotive", hasDropdown: true },
+    { 
+      name: "Engine Oils", 
+      hasDropdown: true,
+      subColumns: [
+        {
+          title: "Petrol Engine Oils",
+          links: ["Full Synthetic", "Semi-Synthetic", "Mineral Oils", "High Performance"]
+        },
+        {
+          title: "Diesel Engine Oils",
+          links: ["Commercial Vehicles", "Heavy Duty", "Standard Diesel", "Turbo Diesel"]
+        },
+        {
+          title: "Motorcycle Oils",
+          links: ["4-Stroke Engines", "2-Stroke Engines", "Racing Performance", "Street Bikes"]
+        }
+      ]
+    },
+    { 
+      name: "Industrial Oils", 
+      hasDropdown: true,
+      subColumns: [
+        {
+          title: "Machinery Oils",
+          links: ["Hydraulic Fluids", "Industrial Gears", "Compressor Oils", "Spindle & Looms"]
+        },
+        {
+          title: "Metal Working",
+          links: ["Cutting Fluids", "Coolants", "Rust Preventives", "Quenching Oils"]
+        },
+        {
+          title: "Specialty Lubricants",
+          links: ["Heat Transfer", "Transformer Oils", "Circulating Oils", "Vacuum Pump"]
+        }
+      ]
+    },
+    { 
+      name: "Greases", 
+      hasDropdown: true,
+      subColumns: [
+        {
+          title: "Automotive Greases",
+          links: ["Wheel Bearing", "Chassis Grease", "Universal Joint", "High Temp Lithium"]
+        },
+        {
+          title: "Industrial Greases",
+          links: ["Food Grade", "Calcium Sulphonate", "Molygrease", "Complex Greases"]
+        }
+      ]
+    },
+    { 
+      name: "Automotive", 
+      hasDropdown: true,
+      subColumns: [
+        {
+          title: "Transmission & Gear",
+          links: ["ATF Fluids", "Manual Transmission", "Hypoid Gear Oils", "CVT Fluids"]
+        },
+        {
+          title: "Care & Maintenance",
+          links: ["Brake Fluids (DOT 3/4)", "Antifreeze Coolants", "Fuel Additives", "AdBlue Solutions"]
+        }
+      ]
+    },
     { name: "Fuel Additives", hasDropdown: false },
-    { name: "Brands", hasDropdown: true }
+    { 
+      name: "Brands", 
+      hasDropdown: true,
+      subColumns: [
+        {
+          title: "Top Brands",
+          links: ["Motul", "Shell Helix", "Castrol", "Mobil 1", "Valvoline"]
+        },
+        {
+          title: "Other Partners",
+          links: ["Liqui Moly", "AMSOIL", "Ravenol", "Gulf", "Servo"]
+        }
+      ]
+    }
   ];
 
   return (
@@ -95,7 +168,7 @@ const Header = () => {
               <div className="relative">
                 <button 
                   onClick={() => setIsLocationOpen(!isLocationOpen)}
-                  className="hidden xl:flex items-center gap-3 text-gray-600 hover:text-brand-blue group transition-colors"
+                  className="hidden xl:flex items-center gap-3 text-gray-600 hover:text-brand-blue group transition-colors cursor-pointer"
                 >
                   <div className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-brand-blue/10 transition-colors">
                     <MapPin className="w-4.5 h-4.5" />
@@ -125,7 +198,7 @@ const Header = () => {
                         />
                         <button 
                           type="submit"
-                          className="absolute right-2 top-1.5 bottom-1.5 px-3 bg-brand-blue text-white rounded-md text-[11px] font-bold hover:bg-brand-blue/90 transition-colors"
+                          className="absolute right-2 top-1.5 bottom-1.5 px-3 bg-brand-blue text-white rounded-md text-[11px] font-bold hover:bg-brand-blue/90 transition-colors cursor-pointer"
                         >
                           Apply
                         </button>
@@ -133,7 +206,7 @@ const Header = () => {
                       <div className="pt-2">
                         <button 
                           type="button"
-                          className="text-brand-blue text-[12px] font-semibold hover:underline"
+                          className="text-brand-blue text-[12px] font-semibold hover:underline cursor-pointer"
                         >
                           Use Current Location
                         </button>
@@ -149,13 +222,13 @@ const Header = () => {
               <div className="flex w-full items-stretch h-11 border border-gray-300 rounded-lg overflow-hidden focus-within:ring-4 focus-within:ring-brand-blue/10 focus-within:border-brand-blue transition-all">
                 <input
                   type="text"
-                  placeholder="Search Products by title, sku, category, brand etc.."
+                  placeholder="Search Product, Category, Brand etc..."
                   className="flex-1 px-5 text-[14px] outline-none placeholder:text-gray-400 font-sans"
                   suppressHydrationWarning
                 />
                 <button 
                   type="submit"
-                  className="bg-brand-orange w-11 h-11 flex-shrink-0 flex items-center justify-center text-white hover:bg-brand-orange/90 transition-colors aspect-square"
+                  className="bg-brand-orange w-11 h-11 flex-shrink-0 flex items-center justify-center text-white hover:bg-brand-orange/90 transition-colors aspect-square cursor-pointer"
                 >
                   <Search className="w-5 h-5 stroke-[2.5px]" />
                 </button>
@@ -182,7 +255,7 @@ const Header = () => {
                 <span className="text-[12px] font-semibold uppercase whitespace-nowrap">Track Order</span>
               </Link>
 
-              <button className="lg:hidden p-2 text-gray-700" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <button className="lg:hidden p-2 text-gray-700 cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <Menu className="w-7 h-7" />
               </button>
             </div>
@@ -190,29 +263,62 @@ const Header = () => {
         </div>
       </div>
 
-      {/* 3. Bottom Row - Categories Navigation */}
-      <div className="bg-gray-50/50 hidden lg:block">
+      {/* 3. Bottom Row - Categories Navigation (with MEGA MENU) */}
+      <div className="bg-white hidden lg:block border-y border-gray-100">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
-          <nav className="flex items-center space-x-10 py-3">
+          <nav className="flex items-center space-x-12 py-3">
             {categories.map((item) => (
-              <div key={item.name} className="relative group">
-                <button className="flex items-center gap-2 text-[12px] font-bold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors">
+              <div key={item.name} className="relative group/nav">
+                <button className="flex items-center gap-2 text-[12px] font-semibold text-[#222222] hover:text-brand-blue uppercase tracking-tight transition-colors cursor-pointer py-1">
                   {item.name}
-                  {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-brand-blue transition-colors" />}
+                  {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover/nav:text-brand-blue transition-colors" />}
                 </button>
+                
                 {item.hasDropdown && (
-                  <div className="absolute top-full left-0 mt-0 w-56 bg-white shadow-xl rounded-b-xl border border-gray-100 hidden group-hover:block z-50 animate-in fade-in duration-200">
-                    <div className="py-2">
-                      <Link href="#" className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-brand-blue/5 hover:text-brand-blue font-medium">All {item.name}</Link>
-                      <Link href="#" className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-brand-blue/5 hover:text-brand-blue font-medium">Popular Items</Link>
-                      <Link href="#" className="block px-6 py-2.5 text-sm text-gray-600 hover:bg-brand-blue/5 hover:text-brand-blue font-medium">New Arrivals</Link>
+                  <div className="fixed top-[152px] left-0 right-0 bg-white shadow-2xl border-t border-gray-100 hidden group-hover/nav:block z-[9999] animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="max-w-[1600px] mx-auto px-6 lg:px-12 py-10">
+                      <div className="grid grid-cols-4 gap-12">
+                        {item.subColumns && item.subColumns.map((col, idx) => (
+                          <div key={idx} className="flex flex-col space-y-4">
+                            <h3 className="text-brand-blue font-semibold text-[14px] uppercase tracking-wider border-b border-brand-blue/10 pb-2">
+                              {col.title}
+                            </h3>
+                            <div className="flex flex-col space-y-2">
+                              {col.links.map((link) => (
+                                <Link 
+                                  key={link} 
+                                  href={`/shop?${item.name.toLowerCase()}=${link.toLowerCase()}`}
+                                  className="text-gray-600 hover:text-brand-orange text-[13.5px] font-medium transition-colors flex items-center group/link"
+                                >
+                                  <div className="w-1.5 h-1.5 bg-gray-200 rounded-full mr-2 group-hover/link:bg-brand-orange transition-colors" />
+                                  {link}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                        
+                        {/* Static Promotional Column */}
+                        <div className="bg-gradient-to-br from-brand-blue to-[#0F4E8A] rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg">
+                          <div>
+                            <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-orange">Marketplace Offer</span>
+                            <h4 className="text-[20px] font-semibold leading-tight mt-2 !text-white">Premium {item.name} <br /> Collection</h4>
+                            <p className="text-white/80 text-[12px] mt-4 font-medium leading-relaxed">
+                              Get certified quality products from global brands with secure delivery.
+                            </p>
+                          </div>
+                          <Link href="/shop" className="mt-8 bg-white text-brand-blue px-6 py-2.5 rounded-lg font-bold text-[12px] text-center hover:bg-brand-orange hover:text-white transition-all uppercase tracking-wider">
+                            Explore Now
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
             ))}
             <div className="flex-1"></div>
-            <Link href="/offers" className="text-[11px] font-semibold text-brand-orange hover:text-brand-orange/80 uppercase tracking-tight flex items-center gap-2">
+            <Link href="/offers" className="text-[11px] font-bold text-brand-orange hover:text-brand-orange/80 uppercase tracking-tight flex items-center gap-2">
               🔥 Today's Offers
             </Link>
           </nav>
@@ -238,7 +344,7 @@ const Header = () => {
               
               <div className="space-y-2">
                 {categories.map((cat) => (
-                  <Link key={cat.name} href="#" className="flex items-center justify-between p-4 text-base font-bold border-b border-gray-50 uppercase text-[#222222]">
+                  <Link key={cat.name} href="#" className="flex items-center justify-between p-4 text-base font-semibold border-b border-gray-50 uppercase text-[#222222]">
                     {cat.name}
                     {cat.hasDropdown && <ChevronDown className="w-5 h-5 text-gray-400" />}
                   </Link>

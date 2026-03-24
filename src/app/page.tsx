@@ -11,6 +11,8 @@ import TrendingProducts from "@/components/homepage/TrendingProducts";
 import TrendingBanners from "@/components/homepage/TrendingBanners";
 import RecentlyViewed from "@/components/homepage/RecentlyViewed";
 import ProductsUnder500 from "@/components/homepage/ProductsUnder500";
+import AboutUs from "@/components/homepage/AboutUs";
+import FAQ from "@/components/homepage/FAQ";
 
 export default function Home() {
   return (
@@ -28,6 +30,8 @@ export default function Home() {
       <RecentlyViewed />
       <TrendingBanners />
       <ProductsUnder500 />
+      <AboutUs />
+      <FAQ />
     </div>
   );
 }

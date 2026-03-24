@@ -127,20 +127,26 @@ const HotDeals = () => {
         <div className="flex items-center justify-between mb-8 px-1">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
+              <h2 className="text-[30px] lg:text-[34px] font-semibold text-[#222222] tracking-tighter">
                 Hot Deals
               </h2>
             </div>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
           </div>
           
-          <Link 
-            href="/shop" 
-            className="hidden sm:flex items-center gap-2 text-brand-blue font-semibold text-[14px] hover:gap-3 transition-all duration-300 group"
-          >
-            View All
-            <ArrowRight className="w-4 h-4 translate-y-[1px] group-hover:translate-x-1 transition-transform" />
-          </Link>
+          <div className="flex items-center gap-6">
+            {/* View All Button - Hero Style (No Shadow) */}
+            <Link 
+              href="/shop" 
+              className="relative px-8 py-2.5 bg-brand-blue rounded-lg text-white font-semibold text-[14px] inline-flex items-center gap-3 group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden cursor-pointer"
+            >
+              {/* Left-to-Right Orange Sweep Layer */}
+              <div className="absolute inset-0 w-0 bg-brand-orange group-hover/btn:w-full transition-all duration-500 ease-out" />
+              
+              <span className="relative z-10 transition-colors duration-500">View All</span>
+              <ArrowRight className="relative z-10 w-4 h-4 transition-all duration-500 group-hover/btn:translate-x-1.5" />
+            </Link>
+          </div>
         </div>
 
         {/* Products Slider Wrapping */}

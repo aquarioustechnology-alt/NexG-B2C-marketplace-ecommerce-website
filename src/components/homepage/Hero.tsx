@@ -80,7 +80,7 @@ const Hero = () => {
                 <div className="mb-5 flex items-center">
                   <div className="inline-flex items-center gap-2.5 px-4 py-2 bg-brand-orange/90 backdrop-blur-md rounded-md border-l-4 border-white shadow-xl transform skew-x-[-12deg]">
                     <span 
-                      className="text-white text-[13px] lg:text-[15px] font-black uppercase tracking-[0.1em] skew-x-[12deg]"
+                      className="text-white text-[12px] lg:text-[13px] font-semibold uppercase tracking-[0.1em] skew-x-[12deg]"
                       style={{ color: 'white' }}
                     >
                       {slide.offer}
@@ -90,7 +90,7 @@ const Hero = () => {
 
                 {/* Attention Grabbing One-Liner - Absolute White & 2 Lines Max */}
                 <h1 
-                  className="text-3xl lg:text-5xl font-black leading-[1.1] mb-8 tracking-tight !text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] w-full"
+                  className="text-3xl lg:text-5xl font-semibold leading-[1.1] mb-8 tracking-tight !text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] w-full"
                   style={{ color: 'white' }}
                 >
                   {slide.title}
@@ -99,7 +99,7 @@ const Hero = () => {
                 <div className="flex items-center">
                   <Link 
                     href="/shop" 
-                    className="relative px-8 py-3.5 bg-brand-blue rounded-lg text-white font-bold text-[16px] flex items-center gap-3 shadow-2xl group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
+                    className="relative px-8 py-3.5 bg-brand-blue rounded-lg text-white font-semibold text-[16px] flex items-center gap-3 shadow-2xl group/btn transition-all duration-300 transform hover:-translate-y-1 overflow-hidden"
                   >
                     {/* Left-to-Right White Sweep Layer */}
                     <div className="absolute inset-0 w-0 bg-white group-hover/btn:w-full transition-all duration-500 ease-out" />
@@ -117,13 +117,13 @@ const Hero = () => {
         <div className="absolute bottom-8 right-12 z-20 flex items-center gap-2">
           <button
             onClick={prevSlide}
-            className="w-11 h-11 rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-brand-orange hover:border-brand-orange transition-all flex items-center justify-center group/nav"
+            className="w-11 h-11 rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-brand-orange hover:border-brand-orange transition-all flex items-center justify-center group/nav cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6 group-hover/nav:-translate-x-0.5 transition-transform" />
           </button>
           <button
             onClick={nextSlide}
-            className="w-11 h-11 rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-brand-orange hover:border-brand-orange transition-all flex items-center justify-center group/nav"
+            className="w-11 h-11 rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-brand-orange hover:border-brand-orange transition-all flex items-center justify-center group/nav cursor-pointer"
           >
             <ChevronRight className="w-6 h-6 group-hover/nav:translate-x-0.5 transition-transform" />
           </button>

@@ -27,7 +27,7 @@ const PromoBanners = () => {
         {/* Section Heading - Balanced Side Lines and Less Gap */}
         <div className="flex items-center justify-center gap-6 mb-10 px-1">
            <div className="h-[2px] w-20 bg-brand-blue rounded-full" />
-           <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter whitespace-nowrap">
+           <h2 className="text-[30px] lg:text-[34px] font-semibold text-[#222222] tracking-tighter whitespace-nowrap">
              Exclusive Limited Deals
            </h2>
            <div className="h-[2px] w-20 bg-brand-blue rounded-full" />

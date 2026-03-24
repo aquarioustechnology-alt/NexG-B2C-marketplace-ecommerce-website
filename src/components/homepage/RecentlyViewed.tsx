@@ -126,7 +126,7 @@ const RecentlyViewed = () => {
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-4">
-              <h2 className="text-[28px] lg:text-[32px] font-black text-[#222222] tracking-tighter capitalize">
+              <h2 className="text-[28px] lg:text-[32px] font-semibold text-[#222222] tracking-tighter capitalize">
                 Related To Items You've Viewed
               </h2>
               <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />

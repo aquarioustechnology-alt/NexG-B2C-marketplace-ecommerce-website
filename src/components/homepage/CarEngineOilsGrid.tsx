@@ -137,7 +137,7 @@ const CarEngineOilsGrid = () => {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-8 px-1">
           <div className="flex items-center gap-4">
-            <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[34px] font-semibold text-[#222222] tracking-tighter">
               Engine Oils For Car
             </h2>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />

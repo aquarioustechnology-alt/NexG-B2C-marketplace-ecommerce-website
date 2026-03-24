@@ -19,7 +19,7 @@ const EngineCareCTA = () => {
           {/* Content */}
           <div className="relative h-full flex flex-col justify-center px-10 lg:px-20 max-w-[800px]">
             <h1 
-              className="!text-white text-[26px] lg:text-[38px] font-black leading-tight tracking-tighter mb-2 capitalize drop-shadow-2xl"
+              className="!text-white text-[26px] lg:text-[38px] font-semibold leading-tight tracking-tighter mb-2 capitalize drop-shadow-2xl"
               style={{ color: 'white' }}
             >
               Engineering Extreme Care <br /> for Every Drive

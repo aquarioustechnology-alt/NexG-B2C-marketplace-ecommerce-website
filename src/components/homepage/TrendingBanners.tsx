@@ -10,7 +10,7 @@ const TrendingBanners = () => {
          {/* Section Heading - Centered */}
          <div className="flex items-center justify-center gap-4 mb-10 px-1">
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
-            <h2 className="text-[30px] lg:text-[34px] font-black text-[#222222] tracking-tighter">
+            <h2 className="text-[30px] lg:text-[34px] font-semibold text-[#222222] tracking-tighter">
               Premium Automotive Offers
             </h2>
             <div className="hidden lg:block h-[2px] w-16 bg-brand-blue rounded-full mt-1.5" />
