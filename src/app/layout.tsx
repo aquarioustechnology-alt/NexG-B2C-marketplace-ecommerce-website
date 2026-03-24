@@ -28,7 +28,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${montserrat.variable} h-full antialiased font-sans`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#222222]">
+      <body className="min-h-full flex flex-col bg-white text-[#222222]" suppressHydrationWarning>
         <CartProvider>
           <Header />
           <main className="flex-grow w-full max-w-[1600px] mx-auto overflow-hidden">

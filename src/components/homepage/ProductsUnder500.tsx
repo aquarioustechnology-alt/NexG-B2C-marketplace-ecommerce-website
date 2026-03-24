@@ -8,7 +8,7 @@ import { useCart } from "@/context/CartContext";
 
 const products = [
   {
-    id: 301,
+    id: 801,
     name: "NexG Economy Brake Fluid Dot 3 - 250ml",
     category: "Brake Fluid",
     price: 180,
@@ -19,7 +19,7 @@ const products = [
     sizes: ["250ml", "500ml"],
   },
   {
-    id: 302,
+    id: 802,
     name: "NexG Chain Lube Spray - Professional Grade",
     category: "Lube",
     price: 350,
@@ -30,7 +30,7 @@ const products = [
     sizes: ["150ml", "500ml"],
   },
   {
-    id: 303,
+    id: 803,
     name: "NexG Car Wash Shampoo - High Suds (1L)",
     category: "Cleaning",
     price: 299,
@@ -41,7 +41,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 304,
+    id: 804,
     name: "NexG Glass Cleaner Spray - Streak Free",
     category: "Cleaning",
     price: 150,
@@ -52,7 +52,7 @@ const products = [
     sizes: ["500ml"],
   },
   {
-    id: 305,
+    id: 805,
     name: "NexG Dashboard Polish - Long Lasting Shine",
     category: "Cleaning",
     price: 420,
@@ -63,7 +63,7 @@ const products = [
     sizes: ["200ml", "500ml"],
   },
   {
-    id: 306,
+    id: 806,
     name: "NexG Microfiber Towel - Ultra Soft (Pack of 2)",
     category: "Accessory",
     price: 240,

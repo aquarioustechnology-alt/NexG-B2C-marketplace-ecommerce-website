@@ -77,7 +77,7 @@ const ChatBot = () => {
                 </span>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1.5 rounded-lg transition-colors">
+            <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1.5 rounded-lg transition-colors cursor-pointer">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -109,7 +109,7 @@ const ChatBot = () => {
             />
             <button 
               type="submit" 
-              className="bg-brand-red text-white p-2 rounded-xl hover:bg-brand-red/90 transition-all shadow-md active:scale-95 disabled:opacity-50"
+              className="bg-brand-red text-white p-2 rounded-xl hover:bg-brand-red/90 transition-all shadow-md active:scale-95 disabled:opacity-50 cursor-pointer"
               disabled={!inputValue.trim()}
             >
               <Send className="w-5 h-5" />
@@ -126,7 +126,7 @@ const ChatBot = () => {
               e.stopPropagation();
               setShowTooltip(false);
             }}
-            className="absolute -top-2 -left-2 w-5 h-5 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
+            className="absolute -top-2 -left-2 w-5 h-5 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors cursor-pointer"
           >
             <X className="w-3 h-3" />
           </button>
@@ -144,7 +144,7 @@ const ChatBot = () => {
           setIsOpen(!isOpen);
           setShowTooltip(false);
         }}
-        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group ${
+        className={`w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer ${
           isOpen ? "bg-white text-brand-red" : "bg-brand-red text-white"
         }`}
       >

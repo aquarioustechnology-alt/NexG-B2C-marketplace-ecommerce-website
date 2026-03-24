@@ -8,7 +8,7 @@ import { useCart } from "@/context/CartContext";
 
 const products = [
   {
-    id: 101,
+    id: 401,
     name: "NexG Elite 5W-30 Full Synthetic Car Engine Oil",
     category: "Synthetic",
     price: 1250,
@@ -19,7 +19,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 102,
+    id: 402,
     name: "NexG Power Smooth 5W-40 Advanced Performance Oil",
     category: "Synthetic",
     price: 1350,
@@ -30,7 +30,7 @@ const products = [
     sizes: ["1L", "5L", "10L"],
   },
   {
-    id: 103,
+    id: 403,
     name: "NexG Standard Guard 10W-30 Semi-Synthetic Oil",
     category: "Semi-Synthetic",
     price: 850,
@@ -41,7 +41,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 104,
+    id: 404,
     name: "NexG Classic 20W-50 High Mileage Engine Oil",
     category: "Mineral",
     price: 650,
@@ -52,7 +52,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 105,
+    id: 405,
     name: "NexG Ultra Synthetic 0W-20 Fuel Economy Oil",
     category: "Synthetic",
     price: 1450,
@@ -63,7 +63,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 106,
+    id: 406,
     name: "NexG Diesel Max 15W-40 Advanced Diesel Engine Oil",
     category: "Diesel",
     price: 1550,
@@ -74,7 +74,7 @@ const products = [
     sizes: ["5L", "10L"],
   },
   {
-    id: 107,
+    id: 407,
     name: "NexG Performance Plus 10W-40 Car Oil",
     category: "Synthetic",
     price: 1150,
@@ -85,7 +85,7 @@ const products = [
     sizes: ["1L", "5L"],
   },
   {
-    id: 108,
+    id: 408,
     name: "NexG Racing Edition 10W-60 Synthetic Oil",
     category: "Racing",
     price: 2200,

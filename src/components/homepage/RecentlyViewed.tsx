@@ -7,7 +7,7 @@ import { useCart } from "@/context/CartContext";
 
 const products = [
   {
-    id: 301,
+    id: 901,
     name: "Motul 8100 X-cess Gen2 5W-40 Synthetic",
     price: 4850,
     originalPrice: 5500,
@@ -17,7 +17,7 @@ const products = [
     sizes: ["1L", "4L", "5L"]
   },
   {
-    id: 302,
+    id: 902,
     name: "Shell Helix Ultra 5W-40 Fully Synthetic",
     price: 3200,
     originalPrice: 3800,
@@ -27,7 +27,7 @@ const products = [
     sizes: ["1L", "3.5L", "5L"]
   },
   {
-    id: 303,
+    id: 903,
     name: "Castrol MAGNATEC 5W-30 Petrol/CNG Oil",
     price: 1850,
     originalPrice: 2200,
@@ -37,7 +37,7 @@ const products = [
     sizes: ["1L", "3L", "3.5L"]
   },
   {
-    id: 304,
+    id: 904,
     name: "Mobil 1 0W-40 Advanced Full Synthetic",
     price: 5200,
     originalPrice: 6000,
@@ -47,7 +47,7 @@ const products = [
     sizes: ["1L", "4L", "5L"]
   },
   {
-    id: 305,
+    id: 905,
     name: "Valvoline European Full Synthetic 5W-40",
     price: 3950,
     originalPrice: 4500,
@@ -57,7 +57,7 @@ const products = [
     sizes: ["1L", "4L", "5L"]
   },
   {
-    id: 306,
+    id: 906,
     name: "AMSOIL Signature Series 5W-30 Synthetic",
     price: 6500,
     originalPrice: 7200,
@@ -67,7 +67,7 @@ const products = [
     sizes: ["1L", "3.8L", "4L"]
   },
   {
-    id: 307,
+    id: 907,
     name: "Liqui Moly Molygen New Generation 5W-40",
     price: 4950,
     originalPrice: 5600,
@@ -77,7 +77,7 @@ const products = [
     sizes: ["1L", "4L", "5L"]
   },
   {
-    id: 308,
+    id: 908,
     name: "Ravenol VMP 5W-30 Synthetic Motor Oil",
     price: 5800,
     originalPrice: 6500,
